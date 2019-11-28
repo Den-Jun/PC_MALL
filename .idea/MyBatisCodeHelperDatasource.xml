@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="addSerializeUid" value="true" />
+        <option name="generateService" value="true" />
+        <option name="generateServiceInterface" value="true" />
+        <option name="javaMapperPackage" value="com.junbaobao.mapper" />
+        <option name="javaMapperPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+        <option name="javaModelPackage" value="com.junbaobao.model" />
+        <option name="javaModelPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="mallconfigure" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="modelAddToString" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="mallconfigure">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.junbaobao.mapper" />
+                  <option name="javaMapperPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+                  <option name="javaModelPacakge" value="com.junbaobao.model" />
+                  <option name="javaModelPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+                  <option name="javaServiceInterfacePackage" value="com.junbaobao.service" />
+                  <option name="javaServiceInterfacePath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+                  <option name="javaServicePackage" value="com.junbaobao.service.Impl" />
+                  <option name="javaServicePath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\java" />
+                  <option name="xmlPackage" value="mybatis.mapper" />
+                  <option name="xmlPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="paascloud_mdc:pc_mdc_address">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcAddress" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mdc_attachment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcAttachment" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mdc_dict">
+              <value>
+                <TableGenerateConfig>
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcDict" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mdc_exception_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcExceptionLog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mdc_product">
+              <value>
+                <TableGenerateConfig>
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcProduct" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mdc_product_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMdcProductCategory" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_mdc:pc_mq_message_data">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="insertOnDuplicateKey" value="true" />
+                  <option name="javaModelName" value="PcMqMessageData" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="updateBatch" value="true" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_omc:pc_omc_cart">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOmcCart" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_omc:pc_omc_order">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOmcOrder" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_omc:pc_omc_order_detail">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOmcOrderDetail" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_omc:pc_omc_shipping">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOmcShipping" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_omc:pc_ptc_pay_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcPtcPayInfo" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_opc:pc_mq_message_data">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcMqMessageData" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_opc:pc_opc_sms_setting">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOpcSmsSetting" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_opc:pc_opt_attachment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcOptAttachment" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:job_execution_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="JobExecutionLog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:job_status_trace_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="JobStatusTraceLog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_job_task">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcTpcJobTask" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_confirm">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqConfirm" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_consumer">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqConsumer" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_message">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqMessage" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_producer">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqProducer" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_publish">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcTpcMqPublish" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_resend_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqResendLog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_subscribe">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcTpcMqSubscribe" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_subscribe_tag">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcTpcMqSubscribeTag" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_tag">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqTag" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_tpc:pc_tpc_mq_topic">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcTpcMqTopic" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:databasechangelog">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Databasechangelog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:databasechangeloglock">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Databasechangeloglock" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_mq_message_data">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcMqMessageData" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_action">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacAction" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_application">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacApplication" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_group">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacGroup" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_group_user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcUacGroupUser" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacLog" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_menu">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacMenu" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_role">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacRole" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_role_action">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcUacRoleAction" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_role_menu">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcUacRoleMenu" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_role_user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcUacRoleUser" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacUser" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_user_menu">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PcUacUserMenu" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:pc_uac_user_token">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PcUacUserToken" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:persistent_logins">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="PersistentLogins" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="paascloud_uac:user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="User" />
+                  <option name="moduleName" value="mallconfigure" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mybatis.mapper" />
+        <option name="xmlMapperPath" value="F:\I\PC_MALL\mall-Provider-api\provider-uac-api\src\main\resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

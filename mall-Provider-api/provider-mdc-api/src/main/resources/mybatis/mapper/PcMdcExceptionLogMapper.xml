@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcMdcExceptionLogMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    <!--@Table pc_mdc_exception_log-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="application_name" jdbcType="VARCHAR" property="applicationName" />
+    <result column="exception_simple_name" jdbcType="VARCHAR" property="exceptionSimpleName" />
+    <result column="exception_message" jdbcType="VARCHAR" property="exceptionMessage" />
+    <result column="exception_cause" jdbcType="VARCHAR" property="exceptionCause" />
+    <result column="exception_stack" jdbcType="LONGVARCHAR" property="exceptionStack" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, application_name, exception_simple_name, exception_message, exception_cause, 
+    exception_stack, creator, creator_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_mdc_exception_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_mdc_exception_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    insert into pc_mdc_exception_log (id, application_name, exception_simple_name, 
+      exception_message, exception_cause, exception_stack, 
+      creator, creator_id, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{applicationName,jdbcType=VARCHAR}, #{exceptionSimpleName,jdbcType=VARCHAR}, 
+      #{exceptionMessage,jdbcType=VARCHAR}, #{exceptionCause,jdbcType=VARCHAR}, #{exceptionStack,jdbcType=LONGVARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    insert into pc_mdc_exception_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applicationName != null">
+        application_name,
+      </if>
+      <if test="exceptionSimpleName != null">
+        exception_simple_name,
+      </if>
+      <if test="exceptionMessage != null">
+        exception_message,
+      </if>
+      <if test="exceptionCause != null">
+        exception_cause,
+      </if>
+      <if test="exceptionStack != null">
+        exception_stack,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="applicationName != null">
+        #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionSimpleName != null">
+        #{exceptionSimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionMessage != null">
+        #{exceptionMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionCause != null">
+        #{exceptionCause,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionStack != null">
+        #{exceptionStack,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    update pc_mdc_exception_log
+    <set>
+      <if test="applicationName != null">
+        application_name = #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionSimpleName != null">
+        exception_simple_name = #{exceptionSimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionMessage != null">
+        exception_message = #{exceptionMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionCause != null">
+        exception_cause = #{exceptionCause,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionStack != null">
+        exception_stack = #{exceptionStack,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    update pc_mdc_exception_log
+    set application_name = #{applicationName,jdbcType=VARCHAR},
+      exception_simple_name = #{exceptionSimpleName,jdbcType=VARCHAR},
+      exception_message = #{exceptionMessage,jdbcType=VARCHAR},
+      exception_cause = #{exceptionCause,jdbcType=VARCHAR},
+      exception_stack = #{exceptionStack,jdbcType=LONGVARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update pc_mdc_exception_log
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="application_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.applicationName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="exception_simple_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.exceptionSimpleName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="exception_message = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.exceptionMessage,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="exception_cause = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.exceptionCause,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="exception_stack = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.exceptionStack,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="creator = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.creator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="creator_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.creatorId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="insertOrUpdate" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    insert into pc_mdc_exception_log
+    (id, application_name, exception_simple_name, exception_message, exception_cause, 
+      exception_stack, creator, creator_id, create_time)
+    values
+    (#{id,jdbcType=BIGINT}, #{applicationName,jdbcType=VARCHAR}, #{exceptionSimpleName,jdbcType=VARCHAR}, 
+      #{exceptionMessage,jdbcType=VARCHAR}, #{exceptionCause,jdbcType=VARCHAR}, #{exceptionStack,jdbcType=LONGVARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+    on duplicate key update 
+    id = #{id,jdbcType=BIGINT}, 
+    application_name = #{applicationName,jdbcType=VARCHAR}, 
+    exception_simple_name = #{exceptionSimpleName,jdbcType=VARCHAR}, 
+    exception_message = #{exceptionMessage,jdbcType=VARCHAR}, 
+    exception_cause = #{exceptionCause,jdbcType=VARCHAR}, 
+    exception_stack = #{exceptionStack,jdbcType=LONGVARCHAR}, 
+    creator = #{creator,jdbcType=VARCHAR}, 
+    creator_id = #{creatorId,jdbcType=BIGINT}, 
+    create_time = #{createTime,jdbcType=TIMESTAMP}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="com.junbaobao.model.PcMdcExceptionLog">
+    <!--@mbg.generated-->
+    insert into pc_mdc_exception_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applicationName != null">
+        application_name,
+      </if>
+      <if test="exceptionSimpleName != null">
+        exception_simple_name,
+      </if>
+      <if test="exceptionMessage != null">
+        exception_message,
+      </if>
+      <if test="exceptionCause != null">
+        exception_cause,
+      </if>
+      <if test="exceptionStack != null">
+        exception_stack,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="applicationName != null">
+        #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionSimpleName != null">
+        #{exceptionSimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionMessage != null">
+        #{exceptionMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionCause != null">
+        #{exceptionCause,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionStack != null">
+        #{exceptionStack,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="applicationName != null">
+        application_name = #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionSimpleName != null">
+        exception_simple_name = #{exceptionSimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionMessage != null">
+        exception_message = #{exceptionMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionCause != null">
+        exception_cause = #{exceptionCause,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionStack != null">
+        exception_stack = #{exceptionStack,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="providermdcapi" />
+        <module name="mallprovideruac" />
+        <module name="mallconfigure" />
+        <module name="provideropcapi" />
+        <module name="providerEureka" />
+        <module name="provideruacapi" />
+        <module name="paascloudtpcapi" />
+        <module name="provideromcapi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mallconfigure" options="-parameters" />
+      <module name="mallprovider" options="-parameters" />
+      <module name="mallprovideruac" options="-parameters" />
+      <module name="paascloudtpcapi" options="-parameters" />
+      <module name="providerEureka" options="-parameters" />
+      <module name="providermdcapi" options="-parameters" />
+      <module name="provideromcapi" options="-parameters" />
+      <module name="provideropcapi" options="-parameters" />
+      <module name="provideruacapi" options="-parameters" />
+    </option>
+  </component>
+</project>

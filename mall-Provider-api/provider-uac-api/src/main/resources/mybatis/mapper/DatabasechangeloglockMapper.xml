@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.DatabasechangeloglockMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.Databasechangeloglock">
+    <!--@mbg.generated-->
+    <!--@Table databasechangeloglock-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="LOCKED" jdbcType="BIT" property="locked" />
+    <result column="LOCKGRANTED" jdbcType="TIMESTAMP" property="lockgranted" />
+    <result column="LOCKEDBY" jdbcType="VARCHAR" property="lockedby" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, LOCKED, LOCKGRANTED, LOCKEDBY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from databasechangeloglock
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from databasechangeloglock
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.Databasechangeloglock">
+    <!--@mbg.generated-->
+    insert into databasechangeloglock (ID, LOCKED, LOCKGRANTED, 
+      LOCKEDBY)
+    values (#{id,jdbcType=INTEGER}, #{locked,jdbcType=BIT}, #{lockgranted,jdbcType=TIMESTAMP}, 
+      #{lockedby,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.Databasechangeloglock">
+    <!--@mbg.generated-->
+    insert into databasechangeloglock
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="locked != null">
+        LOCKED,
+      </if>
+      <if test="lockgranted != null">
+        LOCKGRANTED,
+      </if>
+      <if test="lockedby != null">
+        LOCKEDBY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="locked != null">
+        #{locked,jdbcType=BIT},
+      </if>
+      <if test="lockgranted != null">
+        #{lockgranted,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockedby != null">
+        #{lockedby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.Databasechangeloglock">
+    <!--@mbg.generated-->
+    update databasechangeloglock
+    <set>
+      <if test="locked != null">
+        LOCKED = #{locked,jdbcType=BIT},
+      </if>
+      <if test="lockgranted != null">
+        LOCKGRANTED = #{lockgranted,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockedby != null">
+        LOCKEDBY = #{lockedby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.Databasechangeloglock">
+    <!--@mbg.generated-->
+    update databasechangeloglock
+    set LOCKED = #{locked,jdbcType=BIT},
+      LOCKGRANTED = #{lockgranted,jdbcType=TIMESTAMP},
+      LOCKEDBY = #{lockedby,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

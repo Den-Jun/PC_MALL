@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcUacUserMenuMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcUacUserMenu">
+    <!--@mbg.generated-->
+    <!--@Table pc_uac_user_menu-->
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+  </resultMap>
+  <insert id="insert" parameterType="com.junbaobao.model.PcUacUserMenu">
+    <!--@mbg.generated-->
+    insert into pc_uac_user_menu (user_id, menu_id, `number`
+      )
+    values (#{userId,jdbcType=BIGINT}, #{menuId,jdbcType=BIGINT}, #{number,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcUacUserMenu">
+    <!--@mbg.generated-->
+    insert into pc_uac_user_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="menuId != null">
+        menu_id,
+      </if>
+      <if test="number != null">
+        `number`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

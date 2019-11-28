@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcTpcMqMessageMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcTpcMqMessage">
+    <!--@mbg.generated-->
+    <!--@Table pc_tpc_mq_message-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="message_key" jdbcType="VARCHAR" property="messageKey" />
+    <result column="message_topic" jdbcType="VARCHAR" property="messageTopic" />
+    <result column="message_tag" jdbcType="VARCHAR" property="messageTag" />
+    <result column="message_body" jdbcType="LONGVARCHAR" property="messageBody" />
+    <result column="message_type" jdbcType="INTEGER" property="messageType" />
+    <result column="producer_group" jdbcType="VARCHAR" property="producerGroup" />
+    <result column="delay_level" jdbcType="INTEGER" property="delayLevel" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="message_status" jdbcType="INTEGER" property="messageStatus" />
+    <result column="task_status" jdbcType="INTEGER" property="taskStatus" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="resend_times" jdbcType="INTEGER" property="resendTimes" />
+    <result column="dead" jdbcType="INTEGER" property="dead" />
+    <result column="next_exe_time" jdbcType="INTEGER" property="nextExeTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, message_key, message_topic, message_tag, message_body, message_type, 
+    producer_group, delay_level, order_type, message_status, task_status, update_time, 
+    resend_times, dead, next_exe_time, yn, creator, creator_id, created_time, last_operator, 
+    last_operator_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_tpc_mq_message
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_tpc_mq_message
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcTpcMqMessage" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_message (version, message_key, message_topic, 
+      message_tag, message_body, message_type, 
+      producer_group, delay_level, order_type, 
+      message_status, task_status, update_time, 
+      resend_times, dead, next_exe_time, 
+      yn, creator, creator_id, 
+      created_time, last_operator, last_operator_id
+      )
+    values (#{version,jdbcType=INTEGER}, #{messageKey,jdbcType=VARCHAR}, #{messageTopic,jdbcType=VARCHAR}, 
+      #{messageTag,jdbcType=VARCHAR}, #{messageBody,jdbcType=LONGVARCHAR}, #{messageType,jdbcType=INTEGER}, 
+      #{producerGroup,jdbcType=VARCHAR}, #{delayLevel,jdbcType=INTEGER}, #{orderType,jdbcType=INTEGER}, 
+      #{messageStatus,jdbcType=INTEGER}, #{taskStatus,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{resendTimes,jdbcType=INTEGER}, #{dead,jdbcType=INTEGER}, #{nextExeTime,jdbcType=INTEGER}, 
+      #{yn,jdbcType=INTEGER}, #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcTpcMqMessage" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        version,
+      </if>
+      <if test="messageKey != null">
+        message_key,
+      </if>
+      <if test="messageTopic != null">
+        message_topic,
+      </if>
+      <if test="messageTag != null">
+        message_tag,
+      </if>
+      <if test="messageBody != null">
+        message_body,
+      </if>
+      <if test="messageType != null">
+        message_type,
+      </if>
+      <if test="producerGroup != null">
+        producer_group,
+      </if>
+      <if test="delayLevel != null">
+        delay_level,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="messageStatus != null">
+        message_status,
+      </if>
+      <if test="taskStatus != null">
+        task_status,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="resendTimes != null">
+        resend_times,
+      </if>
+      <if test="dead != null">
+        dead,
+      </if>
+      <if test="nextExeTime != null">
+        next_exe_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="producerGroup != null">
+        #{producerGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="delayLevel != null">
+        #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="messageStatus != null">
+        #{messageStatus,jdbcType=INTEGER},
+      </if>
+      <if test="taskStatus != null">
+        #{taskStatus,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resendTimes != null">
+        #{resendTimes,jdbcType=INTEGER},
+      </if>
+      <if test="dead != null">
+        #{dead,jdbcType=INTEGER},
+      </if>
+      <if test="nextExeTime != null">
+        #{nextExeTime,jdbcType=INTEGER},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcTpcMqMessage">
+    <!--@mbg.generated-->
+    update pc_tpc_mq_message
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        message_key = #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        message_topic = #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        message_tag = #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        message_type = #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="producerGroup != null">
+        producer_group = #{producerGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="delayLevel != null">
+        delay_level = #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="messageStatus != null">
+        message_status = #{messageStatus,jdbcType=INTEGER},
+      </if>
+      <if test="taskStatus != null">
+        task_status = #{taskStatus,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resendTimes != null">
+        resend_times = #{resendTimes,jdbcType=INTEGER},
+      </if>
+      <if test="dead != null">
+        dead = #{dead,jdbcType=INTEGER},
+      </if>
+      <if test="nextExeTime != null">
+        next_exe_time = #{nextExeTime,jdbcType=INTEGER},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcTpcMqMessage">
+    <!--@mbg.generated-->
+    update pc_tpc_mq_message
+    set version = #{version,jdbcType=INTEGER},
+      message_key = #{messageKey,jdbcType=VARCHAR},
+      message_topic = #{messageTopic,jdbcType=VARCHAR},
+      message_tag = #{messageTag,jdbcType=VARCHAR},
+      message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      message_type = #{messageType,jdbcType=INTEGER},
+      producer_group = #{producerGroup,jdbcType=VARCHAR},
+      delay_level = #{delayLevel,jdbcType=INTEGER},
+      order_type = #{orderType,jdbcType=INTEGER},
+      message_status = #{messageStatus,jdbcType=INTEGER},
+      task_status = #{taskStatus,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      resend_times = #{resendTimes,jdbcType=INTEGER},
+      dead = #{dead,jdbcType=INTEGER},
+      next_exe_time = #{nextExeTime,jdbcType=INTEGER},
+      yn = #{yn,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

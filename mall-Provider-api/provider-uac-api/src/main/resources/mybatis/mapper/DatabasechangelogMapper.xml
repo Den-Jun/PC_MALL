@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.DatabasechangelogMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.Databasechangelog">
+    <!--@mbg.generated-->
+    <!--@Table databasechangelog-->
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="AUTHOR" jdbcType="VARCHAR" property="author" />
+    <result column="FILENAME" jdbcType="VARCHAR" property="filename" />
+    <result column="DATEEXECUTED" jdbcType="TIMESTAMP" property="dateexecuted" />
+    <result column="ORDEREXECUTED" jdbcType="INTEGER" property="orderexecuted" />
+    <result column="EXECTYPE" jdbcType="VARCHAR" property="exectype" />
+    <result column="MD5SUM" jdbcType="VARCHAR" property="md5sum" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+    <result column="TAG" jdbcType="VARCHAR" property="tag" />
+    <result column="LIQUIBASE" jdbcType="VARCHAR" property="liquibase" />
+    <result column="CONTEXTS" jdbcType="VARCHAR" property="contexts" />
+    <result column="LABELS" jdbcType="VARCHAR" property="labels" />
+    <result column="DEPLOYMENT_ID" jdbcType="VARCHAR" property="deploymentId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.junbaobao.model.Databasechangelog">
+    <!--@mbg.generated-->
+    insert into databasechangelog (ID, AUTHOR, FILENAME, 
+      DATEEXECUTED, ORDEREXECUTED, EXECTYPE, 
+      MD5SUM, DESCRIPTION, COMMENTS, 
+      TAG, LIQUIBASE, CONTEXTS, 
+      LABELS, DEPLOYMENT_ID)
+    values (#{id,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, 
+      #{dateexecuted,jdbcType=TIMESTAMP}, #{orderexecuted,jdbcType=INTEGER}, #{exectype,jdbcType=VARCHAR}, 
+      #{md5sum,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{comments,jdbcType=VARCHAR}, 
+      #{tag,jdbcType=VARCHAR}, #{liquibase,jdbcType=VARCHAR}, #{contexts,jdbcType=VARCHAR}, 
+      #{labels,jdbcType=VARCHAR}, #{deploymentId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.Databasechangelog">
+    <!--@mbg.generated-->
+    insert into databasechangelog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="author != null">
+        AUTHOR,
+      </if>
+      <if test="filename != null">
+        FILENAME,
+      </if>
+      <if test="dateexecuted != null">
+        DATEEXECUTED,
+      </if>
+      <if test="orderexecuted != null">
+        ORDEREXECUTED,
+      </if>
+      <if test="exectype != null">
+        EXECTYPE,
+      </if>
+      <if test="md5sum != null">
+        MD5SUM,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="comments != null">
+        COMMENTS,
+      </if>
+      <if test="tag != null">
+        TAG,
+      </if>
+      <if test="liquibase != null">
+        LIQUIBASE,
+      </if>
+      <if test="contexts != null">
+        CONTEXTS,
+      </if>
+      <if test="labels != null">
+        LABELS,
+      </if>
+      <if test="deploymentId != null">
+        DEPLOYMENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="dateexecuted != null">
+        #{dateexecuted,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderexecuted != null">
+        #{orderexecuted,jdbcType=INTEGER},
+      </if>
+      <if test="exectype != null">
+        #{exectype,jdbcType=VARCHAR},
+      </if>
+      <if test="md5sum != null">
+        #{md5sum,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="comments != null">
+        #{comments,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="liquibase != null">
+        #{liquibase,jdbcType=VARCHAR},
+      </if>
+      <if test="contexts != null">
+        #{contexts,jdbcType=VARCHAR},
+      </if>
+      <if test="labels != null">
+        #{labels,jdbcType=VARCHAR},
+      </if>
+      <if test="deploymentId != null">
+        #{deploymentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

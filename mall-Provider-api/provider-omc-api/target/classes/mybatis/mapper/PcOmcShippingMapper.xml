@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcOmcShippingMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcOmcShipping">
+    <!--@mbg.generated-->
+    <!--@Table pc_omc_shipping-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="receiver_name" jdbcType="VARCHAR" property="receiverName" />
+    <result column="receiver_phone_no" jdbcType="VARCHAR" property="receiverPhoneNo" />
+    <result column="receiver_mobile_no" jdbcType="VARCHAR" property="receiverMobileNo" />
+    <result column="province_id" jdbcType="BIGINT" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="city_id" jdbcType="BIGINT" property="cityId" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="district_name" jdbcType="VARCHAR" property="districtName" />
+    <result column="district_id" jdbcType="VARCHAR" property="districtId" />
+    <result column="street_id" jdbcType="VARCHAR" property="streetId" />
+    <result column="street_name" jdbcType="VARCHAR" property="streetName" />
+    <result column="detail_address" jdbcType="VARCHAR" property="detailAddress" />
+    <result column="receiver_zip_code" jdbcType="VARCHAR" property="receiverZipCode" />
+    <result column="default_address" jdbcType="INTEGER" property="defaultAddress" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, user_id, receiver_name, receiver_phone_no, receiver_mobile_no, province_id, 
+    province_name, city_id, city_name, district_name, district_id, street_id, street_name, 
+    detail_address, receiver_zip_code, default_address, creator, creator_id, created_time, 
+    last_operator, last_operator_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_omc_shipping
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_omc_shipping
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOmcShipping" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_omc_shipping (version, user_id, receiver_name, 
+      receiver_phone_no, receiver_mobile_no, province_id, 
+      province_name, city_id, city_name, 
+      district_name, district_id, street_id, 
+      street_name, detail_address, receiver_zip_code, 
+      default_address, creator, creator_id, 
+      created_time, last_operator, last_operator_id, 
+      update_time)
+    values (#{version,jdbcType=INTEGER}, #{userId,jdbcType=BIGINT}, #{receiverName,jdbcType=VARCHAR}, 
+      #{receiverPhoneNo,jdbcType=VARCHAR}, #{receiverMobileNo,jdbcType=VARCHAR}, #{provinceId,jdbcType=BIGINT}, 
+      #{provinceName,jdbcType=VARCHAR}, #{cityId,jdbcType=BIGINT}, #{cityName,jdbcType=VARCHAR}, 
+      #{districtName,jdbcType=VARCHAR}, #{districtId,jdbcType=VARCHAR}, #{streetId,jdbcType=VARCHAR}, 
+      #{streetName,jdbcType=VARCHAR}, #{detailAddress,jdbcType=VARCHAR}, #{receiverZipCode,jdbcType=VARCHAR}, 
+      #{defaultAddress,jdbcType=INTEGER}, #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOmcShipping" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_omc_shipping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        version,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="receiverName != null">
+        receiver_name,
+      </if>
+      <if test="receiverPhoneNo != null">
+        receiver_phone_no,
+      </if>
+      <if test="receiverMobileNo != null">
+        receiver_mobile_no,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="provinceName != null">
+        province_name,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="cityName != null">
+        city_name,
+      </if>
+      <if test="districtName != null">
+        district_name,
+      </if>
+      <if test="districtId != null">
+        district_id,
+      </if>
+      <if test="streetId != null">
+        street_id,
+      </if>
+      <if test="streetName != null">
+        street_name,
+      </if>
+      <if test="detailAddress != null">
+        detail_address,
+      </if>
+      <if test="receiverZipCode != null">
+        receiver_zip_code,
+      </if>
+      <if test="defaultAddress != null">
+        default_address,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiverName != null">
+        #{receiverName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverPhoneNo != null">
+        #{receiverPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverMobileNo != null">
+        #{receiverMobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="provinceName != null">
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="districtName != null">
+        #{districtName,jdbcType=VARCHAR},
+      </if>
+      <if test="districtId != null">
+        #{districtId,jdbcType=VARCHAR},
+      </if>
+      <if test="streetId != null">
+        #{streetId,jdbcType=VARCHAR},
+      </if>
+      <if test="streetName != null">
+        #{streetName,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAddress != null">
+        #{detailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverZipCode != null">
+        #{receiverZipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultAddress != null">
+        #{defaultAddress,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcOmcShipping">
+    <!--@mbg.generated-->
+    update pc_omc_shipping
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiverName != null">
+        receiver_name = #{receiverName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverPhoneNo != null">
+        receiver_phone_no = #{receiverPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverMobileNo != null">
+        receiver_mobile_no = #{receiverMobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="provinceName != null">
+        province_name = #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        city_name = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="districtName != null">
+        district_name = #{districtName,jdbcType=VARCHAR},
+      </if>
+      <if test="districtId != null">
+        district_id = #{districtId,jdbcType=VARCHAR},
+      </if>
+      <if test="streetId != null">
+        street_id = #{streetId,jdbcType=VARCHAR},
+      </if>
+      <if test="streetName != null">
+        street_name = #{streetName,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAddress != null">
+        detail_address = #{detailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverZipCode != null">
+        receiver_zip_code = #{receiverZipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultAddress != null">
+        default_address = #{defaultAddress,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcOmcShipping">
+    <!--@mbg.generated-->
+    update pc_omc_shipping
+    set version = #{version,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=BIGINT},
+      receiver_name = #{receiverName,jdbcType=VARCHAR},
+      receiver_phone_no = #{receiverPhoneNo,jdbcType=VARCHAR},
+      receiver_mobile_no = #{receiverMobileNo,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=BIGINT},
+      province_name = #{provinceName,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=BIGINT},
+      city_name = #{cityName,jdbcType=VARCHAR},
+      district_name = #{districtName,jdbcType=VARCHAR},
+      district_id = #{districtId,jdbcType=VARCHAR},
+      street_id = #{streetId,jdbcType=VARCHAR},
+      street_name = #{streetName,jdbcType=VARCHAR},
+      detail_address = #{detailAddress,jdbcType=VARCHAR},
+      receiver_zip_code = #{receiverZipCode,jdbcType=VARCHAR},
+      default_address = #{defaultAddress,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

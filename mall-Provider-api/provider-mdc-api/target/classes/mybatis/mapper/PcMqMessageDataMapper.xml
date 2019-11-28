@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcMqMessageDataMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcMqMessageData">
+    <!--@mbg.generated-->
+    <!--@Table pc_mq_message_data-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="message_key" jdbcType="VARCHAR" property="messageKey" />
+    <result column="message_topic" jdbcType="VARCHAR" property="messageTopic" />
+    <result column="message_tag" jdbcType="VARCHAR" property="messageTag" />
+    <result column="message_body" jdbcType="LONGVARCHAR" property="messageBody" />
+    <result column="message_type" jdbcType="INTEGER" property="messageType" />
+    <result column="delay_level" jdbcType="INTEGER" property="delayLevel" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, message_key, message_topic, message_tag, message_body, message_type, 
+    delay_level, order_type, `status`, creator, creator_id, created_time, last_operator, 
+    last_operator_id, update_time, yn
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_mq_message_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_mq_message_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcMqMessageData" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_mq_message_data (version, message_key, message_topic, 
+      message_tag, message_body, message_type, 
+      delay_level, order_type, `status`, 
+      creator, creator_id, created_time, 
+      last_operator, last_operator_id, update_time, 
+      yn)
+    values (#{version,jdbcType=INTEGER}, #{messageKey,jdbcType=VARCHAR}, #{messageTopic,jdbcType=VARCHAR}, 
+      #{messageTag,jdbcType=VARCHAR}, #{messageBody,jdbcType=LONGVARCHAR}, #{messageType,jdbcType=INTEGER}, 
+      #{delayLevel,jdbcType=INTEGER}, #{orderType,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{yn,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcMqMessageData" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_mq_message_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        version,
+      </if>
+      <if test="messageKey != null">
+        message_key,
+      </if>
+      <if test="messageTopic != null">
+        message_topic,
+      </if>
+      <if test="messageTag != null">
+        message_tag,
+      </if>
+      <if test="messageBody != null">
+        message_body,
+      </if>
+      <if test="messageType != null">
+        message_type,
+      </if>
+      <if test="delayLevel != null">
+        delay_level,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="delayLevel != null">
+        #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcMqMessageData">
+    <!--@mbg.generated-->
+    update pc_mq_message_data
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        message_key = #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        message_topic = #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        message_tag = #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        message_type = #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="delayLevel != null">
+        delay_level = #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcMqMessageData">
+    <!--@mbg.generated-->
+    update pc_mq_message_data
+    set version = #{version,jdbcType=INTEGER},
+      message_key = #{messageKey,jdbcType=VARCHAR},
+      message_topic = #{messageTopic,jdbcType=VARCHAR},
+      message_tag = #{messageTag,jdbcType=VARCHAR},
+      message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      message_type = #{messageType,jdbcType=INTEGER},
+      delay_level = #{delayLevel,jdbcType=INTEGER},
+      order_type = #{orderType,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      yn = #{yn,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update pc_mq_message_data
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="version = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.version,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="message_key = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.messageKey,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="message_topic = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.messageTopic,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="message_tag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.messageTag,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="message_body = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.messageBody,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="message_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.messageType,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="delay_level = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.delayLevel,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="order_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.orderType,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="`status` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="creator = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.creator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="creator_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.creatorId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="created_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createdTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="last_operator = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.lastOperator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="last_operator_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.lastOperatorId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="yn = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.yn,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcMqMessageData" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_mq_message_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      version,
+      message_key,
+      message_topic,
+      message_tag,
+      message_body,
+      message_type,
+      delay_level,
+      order_type,
+      `status`,
+      creator,
+      creator_id,
+      created_time,
+      last_operator,
+      last_operator_id,
+      update_time,
+      yn,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      #{version,jdbcType=INTEGER},
+      #{messageKey,jdbcType=VARCHAR},
+      #{messageTopic,jdbcType=VARCHAR},
+      #{messageTag,jdbcType=VARCHAR},
+      #{messageBody,jdbcType=LONGVARCHAR},
+      #{messageType,jdbcType=INTEGER},
+      #{delayLevel,jdbcType=INTEGER},
+      #{orderType,jdbcType=INTEGER},
+      #{status,jdbcType=INTEGER},
+      #{creator,jdbcType=VARCHAR},
+      #{creatorId,jdbcType=BIGINT},
+      #{createdTime,jdbcType=TIMESTAMP},
+      #{lastOperator,jdbcType=VARCHAR},
+      #{lastOperatorId,jdbcType=BIGINT},
+      #{updateTime,jdbcType=TIMESTAMP},
+      #{yn,jdbcType=INTEGER},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      version = #{version,jdbcType=INTEGER},
+      message_key = #{messageKey,jdbcType=VARCHAR},
+      message_topic = #{messageTopic,jdbcType=VARCHAR},
+      message_tag = #{messageTag,jdbcType=VARCHAR},
+      message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      message_type = #{messageType,jdbcType=INTEGER},
+      delay_level = #{delayLevel,jdbcType=INTEGER},
+      order_type = #{orderType,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      yn = #{yn,jdbcType=INTEGER},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcMqMessageData" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_mq_message_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="messageKey != null">
+        message_key,
+      </if>
+      <if test="messageTopic != null">
+        message_topic,
+      </if>
+      <if test="messageTag != null">
+        message_tag,
+      </if>
+      <if test="messageBody != null">
+        message_body,
+      </if>
+      <if test="messageType != null">
+        message_type,
+      </if>
+      <if test="delayLevel != null">
+        delay_level,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="delayLevel != null">
+        #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="messageKey != null">
+        message_key = #{messageKey,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTopic != null">
+        message_topic = #{messageTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTag != null">
+        message_tag = #{messageTag,jdbcType=VARCHAR},
+      </if>
+      <if test="messageBody != null">
+        message_body = #{messageBody,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageType != null">
+        message_type = #{messageType,jdbcType=INTEGER},
+      </if>
+      <if test="delayLevel != null">
+        delay_level = #{delayLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

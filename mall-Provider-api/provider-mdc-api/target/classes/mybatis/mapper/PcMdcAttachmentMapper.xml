@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcMdcAttachmentMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    <!--@Table pc_mdc_attachment-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="version" jdbcType="BIGINT" property="version" />
+    <result column="attachment_sn" jdbcType="VARCHAR" property="attachmentSn" />
+    <result column="attachment_no" jdbcType="VARCHAR" property="attachmentNo" />
+    <result column="center_name" jdbcType="VARCHAR" property="centerName" />
+    <result column="bucket_name" jdbcType="VARCHAR" property="bucketName" />
+    <result column="ref_no" jdbcType="VARCHAR" property="refNo" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="format" jdbcType="VARCHAR" property="format" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="VARCHAR" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="VARCHAR" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, attachment_sn, attachment_no, center_name, bucket_name, ref_no, `name`, 
+    `path`, `type`, format, description, creator, creator_id, created_time, last_operator, 
+    last_operator_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_mdc_attachment
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from pc_mdc_attachment
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    insert into pc_mdc_attachment (id, version, attachment_sn, 
+      attachment_no, center_name, bucket_name, 
+      ref_no, `name`, `path`, 
+      `type`, format, description, 
+      creator, creator_id, created_time, 
+      last_operator, last_operator_id, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, #{attachmentSn,jdbcType=VARCHAR}, 
+      #{attachmentNo,jdbcType=VARCHAR}, #{centerName,jdbcType=VARCHAR}, #{bucketName,jdbcType=VARCHAR}, 
+      #{refNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{format,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    insert into pc_mdc_attachment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="attachmentSn != null">
+        attachment_sn,
+      </if>
+      <if test="attachmentNo != null">
+        attachment_no,
+      </if>
+      <if test="centerName != null">
+        center_name,
+      </if>
+      <if test="bucketName != null">
+        bucket_name,
+      </if>
+      <if test="refNo != null">
+        ref_no,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="path != null">
+        `path`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="format != null">
+        format,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BIGINT},
+      </if>
+      <if test="attachmentSn != null">
+        #{attachmentSn,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentNo != null">
+        #{attachmentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="refNo != null">
+        #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    update pc_mdc_attachment
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=BIGINT},
+      </if>
+      <if test="attachmentSn != null">
+        attachment_sn = #{attachmentSn,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentNo != null">
+        attachment_no = #{attachmentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        center_name = #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        bucket_name = #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="refNo != null">
+        ref_no = #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        `path` = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        format = #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    update pc_mdc_attachment
+    set version = #{version,jdbcType=BIGINT},
+      attachment_sn = #{attachmentSn,jdbcType=VARCHAR},
+      attachment_no = #{attachmentNo,jdbcType=VARCHAR},
+      center_name = #{centerName,jdbcType=VARCHAR},
+      bucket_name = #{bucketName,jdbcType=VARCHAR},
+      ref_no = #{refNo,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      `path` = #{path,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      format = #{format,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update pc_mdc_attachment
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="version = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.version,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="attachment_sn = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.attachmentSn,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="attachment_no = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.attachmentNo,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="center_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.centerName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="bucket_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.bucketName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="ref_no = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.refNo,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`name` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.name,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`path` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.path,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`type` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.type,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="format = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.format,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="description = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.description,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="creator = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.creator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="creator_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.creatorId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="created_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.createdTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="last_operator = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.lastOperator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="last_operator_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.lastOperatorId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="insertOrUpdate" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    insert into pc_mdc_attachment
+    (id, version, attachment_sn, attachment_no, center_name, bucket_name, ref_no, `name`, 
+      `path`, `type`, format, description, creator, creator_id, created_time, last_operator, 
+      last_operator_id, update_time)
+    values
+    (#{id,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, #{attachmentSn,jdbcType=VARCHAR}, 
+      #{attachmentNo,jdbcType=VARCHAR}, #{centerName,jdbcType=VARCHAR}, #{bucketName,jdbcType=VARCHAR}, 
+      #{refNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{format,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    version = #{version,jdbcType=BIGINT}, 
+    attachment_sn = #{attachmentSn,jdbcType=VARCHAR}, 
+    attachment_no = #{attachmentNo,jdbcType=VARCHAR}, 
+    center_name = #{centerName,jdbcType=VARCHAR}, 
+    bucket_name = #{bucketName,jdbcType=VARCHAR}, 
+    ref_no = #{refNo,jdbcType=VARCHAR}, 
+    `name` = #{name,jdbcType=VARCHAR}, 
+    `path` = #{path,jdbcType=VARCHAR}, 
+    `type` = #{type,jdbcType=VARCHAR}, 
+    format = #{format,jdbcType=VARCHAR}, 
+    description = #{description,jdbcType=VARCHAR}, 
+    creator = #{creator,jdbcType=VARCHAR}, 
+    creator_id = #{creatorId,jdbcType=VARCHAR}, 
+    created_time = #{createdTime,jdbcType=TIMESTAMP}, 
+    last_operator = #{lastOperator,jdbcType=VARCHAR}, 
+    last_operator_id = #{lastOperatorId,jdbcType=VARCHAR}, 
+    update_time = #{updateTime,jdbcType=TIMESTAMP}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="com.junbaobao.model.PcMdcAttachment">
+    <!--@mbg.generated-->
+    insert into pc_mdc_attachment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="attachmentSn != null">
+        attachment_sn,
+      </if>
+      <if test="attachmentNo != null">
+        attachment_no,
+      </if>
+      <if test="centerName != null">
+        center_name,
+      </if>
+      <if test="bucketName != null">
+        bucket_name,
+      </if>
+      <if test="refNo != null">
+        ref_no,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="path != null">
+        `path`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="format != null">
+        format,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BIGINT},
+      </if>
+      <if test="attachmentSn != null">
+        #{attachmentSn,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentNo != null">
+        #{attachmentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="refNo != null">
+        #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=BIGINT},
+      </if>
+      <if test="attachmentSn != null">
+        attachment_sn = #{attachmentSn,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentNo != null">
+        attachment_no = #{attachmentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        center_name = #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        bucket_name = #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="refNo != null">
+        ref_no = #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        `path` = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        format = #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcTpcMqPublishMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcTpcMqPublish">
+    <!--@mbg.generated-->
+    <!--@Table pc_tpc_mq_publish-->
+    <id column="producer_id" jdbcType="BIGINT" property="producerId" />
+    <id column="topic_id" jdbcType="BIGINT" property="topicId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from pc_tpc_mq_publish
+    where producer_id = #{producerId,jdbcType=BIGINT}
+      and topic_id = #{topicId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.PcTpcMqPublish">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_publish (producer_id, topic_id)
+    values (#{producerId,jdbcType=BIGINT}, #{topicId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcTpcMqPublish">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_publish
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="producerId != null">
+        producer_id,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="producerId != null">
+        #{producerId,jdbcType=BIGINT},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

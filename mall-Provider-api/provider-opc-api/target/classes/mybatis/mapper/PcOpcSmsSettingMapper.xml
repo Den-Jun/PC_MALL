@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcOpcSmsSettingMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcOpcSmsSetting">
+    <!--@mbg.generated-->
+    <!--@Table pc_opc_sms_setting-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="again_send_time" jdbcType="INTEGER" property="againSendTime" />
+    <result column="invalid_time" jdbcType="INTEGER" property="invalidTime" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="type_desc" jdbcType="VARCHAR" property="typeDesc" />
+    <result column="templet_code" jdbcType="VARCHAR" property="templetCode" />
+    <result column="templet_content" jdbcType="VARCHAR" property="templetContent" />
+    <result column="send_max_num" jdbcType="INTEGER" property="sendMaxNum" />
+    <result column="ip_send_max_num" jdbcType="INTEGER" property="ipSendMaxNum" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, again_send_time, invalid_time, `type`, type_desc, templet_code, templet_content, 
+    send_max_num, ip_send_max_num, remark, creator, creator_id, created_time, last_operator, 
+    last_operator_id, update_time, yn
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_opc_sms_setting
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_opc_sms_setting
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOpcSmsSetting" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_opc_sms_setting (version, again_send_time, invalid_time, 
+      `type`, type_desc, templet_code, 
+      templet_content, send_max_num, ip_send_max_num, 
+      remark, creator, creator_id, 
+      created_time, last_operator, last_operator_id, 
+      update_time, yn)
+    values (#{version,jdbcType=INTEGER}, #{againSendTime,jdbcType=INTEGER}, #{invalidTime,jdbcType=INTEGER}, 
+      #{type,jdbcType=VARCHAR}, #{typeDesc,jdbcType=VARCHAR}, #{templetCode,jdbcType=VARCHAR}, 
+      #{templetContent,jdbcType=VARCHAR}, #{sendMaxNum,jdbcType=INTEGER}, #{ipSendMaxNum,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastOperatorId,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{yn,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOpcSmsSetting" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_opc_sms_setting
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        version,
+      </if>
+      <if test="againSendTime != null">
+        again_send_time,
+      </if>
+      <if test="invalidTime != null">
+        invalid_time,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="typeDesc != null">
+        type_desc,
+      </if>
+      <if test="templetCode != null">
+        templet_code,
+      </if>
+      <if test="templetContent != null">
+        templet_content,
+      </if>
+      <if test="sendMaxNum != null">
+        send_max_num,
+      </if>
+      <if test="ipSendMaxNum != null">
+        ip_send_max_num,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="againSendTime != null">
+        #{againSendTime,jdbcType=INTEGER},
+      </if>
+      <if test="invalidTime != null">
+        #{invalidTime,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDesc != null">
+        #{typeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="templetCode != null">
+        #{templetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="templetContent != null">
+        #{templetContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMaxNum != null">
+        #{sendMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="ipSendMaxNum != null">
+        #{ipSendMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcOpcSmsSetting">
+    <!--@mbg.generated-->
+    update pc_opc_sms_setting
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="againSendTime != null">
+        again_send_time = #{againSendTime,jdbcType=INTEGER},
+      </if>
+      <if test="invalidTime != null">
+        invalid_time = #{invalidTime,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDesc != null">
+        type_desc = #{typeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="templetCode != null">
+        templet_code = #{templetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="templetContent != null">
+        templet_content = #{templetContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMaxNum != null">
+        send_max_num = #{sendMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="ipSendMaxNum != null">
+        ip_send_max_num = #{ipSendMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcOpcSmsSetting">
+    <!--@mbg.generated-->
+    update pc_opc_sms_setting
+    set version = #{version,jdbcType=INTEGER},
+      again_send_time = #{againSendTime,jdbcType=INTEGER},
+      invalid_time = #{invalidTime,jdbcType=INTEGER},
+      `type` = #{type,jdbcType=VARCHAR},
+      type_desc = #{typeDesc,jdbcType=VARCHAR},
+      templet_code = #{templetCode,jdbcType=VARCHAR},
+      templet_content = #{templetContent,jdbcType=VARCHAR},
+      send_max_num = #{sendMaxNum,jdbcType=INTEGER},
+      ip_send_max_num = #{ipSendMaxNum,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      yn = #{yn,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

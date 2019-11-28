@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcUacGroupMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcUacGroup">
+    <!--@mbg.generated-->
+    <!--@Table pc_uac_group-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="group_code" jdbcType="VARCHAR" property="groupCode" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="leaf" jdbcType="INTEGER" property="leaf" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="group_address" jdbcType="VARCHAR" property="groupAddress" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="province_id" jdbcType="BIGINT" property="provinceId" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="city_id" jdbcType="BIGINT" property="cityId" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="area_id" jdbcType="BIGINT" property="areaId" />
+    <result column="street_name" jdbcType="VARCHAR" property="streetName" />
+    <result column="street_id" jdbcType="BIGINT" property="streetId" />
+    <result column="detail_address" jdbcType="VARCHAR" property="detailAddress" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, group_code, group_name, `status`, `type`, pid, `level`, leaf, contact, 
+    group_address, province_name, province_id, city_name, city_id, area_name, area_id, 
+    street_name, street_id, detail_address, contact_phone, remark, creator, creator_id, 
+    created_time, last_operator, last_operator_id, update_time, `number`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_uac_group
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_uac_group
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcUacGroup" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_uac_group (version, group_code, group_name, 
+      `status`, `type`, pid, `level`, 
+      leaf, contact, group_address, 
+      province_name, province_id, city_name, 
+      city_id, area_name, area_id, 
+      street_name, street_id, detail_address, 
+      contact_phone, remark, creator, 
+      creator_id, created_time, last_operator, 
+      last_operator_id, update_time, `number`
+      )
+    values (#{version,jdbcType=INTEGER}, #{groupCode,jdbcType=VARCHAR}, #{groupName,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT}, #{type,jdbcType=VARCHAR}, #{pid,jdbcType=BIGINT}, #{level,jdbcType=INTEGER}, 
+      #{leaf,jdbcType=INTEGER}, #{contact,jdbcType=VARCHAR}, #{groupAddress,jdbcType=VARCHAR}, 
+      #{provinceName,jdbcType=VARCHAR}, #{provinceId,jdbcType=BIGINT}, #{cityName,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=BIGINT}, #{areaName,jdbcType=VARCHAR}, #{areaId,jdbcType=BIGINT}, 
+      #{streetName,jdbcType=VARCHAR}, #{streetId,jdbcType=BIGINT}, #{detailAddress,jdbcType=VARCHAR}, 
+      #{contactPhone,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=BIGINT}, #{createdTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, 
+      #{lastOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{number,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcUacGroup" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_uac_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        version,
+      </if>
+      <if test="groupCode != null">
+        group_code,
+      </if>
+      <if test="groupName != null">
+        group_name,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="level != null">
+        `level`,
+      </if>
+      <if test="leaf != null">
+        leaf,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="groupAddress != null">
+        group_address,
+      </if>
+      <if test="provinceName != null">
+        province_name,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="cityName != null">
+        city_name,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="areaName != null">
+        area_name,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="streetName != null">
+        street_name,
+      </if>
+      <if test="streetId != null">
+        street_id,
+      </if>
+      <if test="detailAddress != null">
+        detail_address,
+      </if>
+      <if test="contactPhone != null">
+        contact_phone,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="number != null">
+        `number`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="groupCode != null">
+        #{groupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=BIGINT},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="leaf != null">
+        #{leaf,jdbcType=INTEGER},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="groupAddress != null">
+        #{groupAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null">
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=BIGINT},
+      </if>
+      <if test="streetName != null">
+        #{streetName,jdbcType=VARCHAR},
+      </if>
+      <if test="streetId != null">
+        #{streetId,jdbcType=BIGINT},
+      </if>
+      <if test="detailAddress != null">
+        #{detailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcUacGroup">
+    <!--@mbg.generated-->
+    update pc_uac_group
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="groupCode != null">
+        group_code = #{groupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null">
+        group_name = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=BIGINT},
+      </if>
+      <if test="level != null">
+        `level` = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="leaf != null">
+        leaf = #{leaf,jdbcType=INTEGER},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="groupAddress != null">
+        group_address = #{groupAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null">
+        province_name = #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null">
+        city_name = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="areaName != null">
+        area_name = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=BIGINT},
+      </if>
+      <if test="streetName != null">
+        street_name = #{streetName,jdbcType=VARCHAR},
+      </if>
+      <if test="streetId != null">
+        street_id = #{streetId,jdbcType=BIGINT},
+      </if>
+      <if test="detailAddress != null">
+        detail_address = #{detailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="number != null">
+        `number` = #{number,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcUacGroup">
+    <!--@mbg.generated-->
+    update pc_uac_group
+    set version = #{version,jdbcType=INTEGER},
+      group_code = #{groupCode,jdbcType=VARCHAR},
+      group_name = #{groupName,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      `type` = #{type,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=BIGINT},
+      `level` = #{level,jdbcType=INTEGER},
+      leaf = #{leaf,jdbcType=INTEGER},
+      contact = #{contact,jdbcType=VARCHAR},
+      group_address = #{groupAddress,jdbcType=VARCHAR},
+      province_name = #{provinceName,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=BIGINT},
+      city_name = #{cityName,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=BIGINT},
+      area_name = #{areaName,jdbcType=VARCHAR},
+      area_id = #{areaId,jdbcType=BIGINT},
+      street_name = #{streetName,jdbcType=VARCHAR},
+      street_id = #{streetId,jdbcType=BIGINT},
+      detail_address = #{detailAddress,jdbcType=VARCHAR},
+      contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      `number` = #{number,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcOptAttachmentMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcOptAttachment">
+    <!--@mbg.generated-->
+    <!--@Table pc_opt_attachment-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="ref_no" jdbcType="VARCHAR" property="refNo" />
+    <result column="center_name" jdbcType="VARCHAR" property="centerName" />
+    <result column="bucket_name" jdbcType="VARCHAR" property="bucketName" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="format" jdbcType="VARCHAR" property="format" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="version" jdbcType="BIGINT" property="version" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="last_operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_operator_id" jdbcType="BIGINT" property="lastOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, ref_no, center_name, bucket_name, `name`, `path`, `type`, format, description, 
+    version, creator, creator_id, created_time, last_operator, last_operator_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_opt_attachment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_opt_attachment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOptAttachment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_opt_attachment (ref_no, center_name, bucket_name, 
+      `name`, `path`, `type`, format, 
+      description, version, creator, 
+      creator_id, created_time, last_operator, 
+      last_operator_id, update_time)
+    values (#{refNo,jdbcType=VARCHAR}, #{centerName,jdbcType=VARCHAR}, #{bucketName,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{format,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, #{creator,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=BIGINT}, #{createdTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, 
+      #{lastOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.junbaobao.model.PcOptAttachment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pc_opt_attachment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="refNo != null">
+        ref_no,
+      </if>
+      <if test="centerName != null">
+        center_name,
+      </if>
+      <if test="bucketName != null">
+        bucket_name,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="path != null">
+        `path`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="format != null">
+        format,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="lastOperator != null">
+        last_operator,
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="refNo != null">
+        #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BIGINT},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcOptAttachment">
+    <!--@mbg.generated-->
+    update pc_opt_attachment
+    <set>
+      <if test="refNo != null">
+        ref_no = #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="centerName != null">
+        center_name = #{centerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucketName != null">
+        bucket_name = #{bucketName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        `path` = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        format = #{format,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=BIGINT},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOperatorId != null">
+        last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcOptAttachment">
+    <!--@mbg.generated-->
+    update pc_opt_attachment
+    set ref_no = #{refNo,jdbcType=VARCHAR},
+      center_name = #{centerName,jdbcType=VARCHAR},
+      bucket_name = #{bucketName,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      `path` = #{path,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      format = #{format,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      version = #{version,jdbcType=BIGINT},
+      creator = #{creator,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_operator_id = #{lastOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

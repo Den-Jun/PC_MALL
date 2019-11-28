@@ -1,0 +1,12 @@
+com\junbaobao\mapper\PcOpcSmsSettingMapper.class
+com\junbaobao\service\Impl\PcMqMessageDataServiceImpl.class
+com\junbaobao\service\PcMqMessageDataService.class
+com\junbaobao\model\PcMqMessageData.class
+com\junbaobao\mapper\PcMqMessageDataMapper.class
+com\junbaobao\model\PcOpcSmsSetting.class
+com\junbaobao\service\Impl\PcOptAttachmentServiceImpl.class
+com\junbaobao\service\PcOpcSmsSettingService.class
+com\junbaobao\model\PcOptAttachment.class
+com\junbaobao\mapper\PcOptAttachmentMapper.class
+com\junbaobao\service\Impl\PcOpcSmsSettingServiceImpl.class
+com\junbaobao\service\PcOptAttachmentService.class

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcTpcMqSubscribeMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcTpcMqSubscribe">
+    <!--@mbg.generated-->
+    <!--@Table pc_tpc_mq_subscribe-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="consumer_id" jdbcType="BIGINT" property="consumerId" />
+    <result column="consumer_code" jdbcType="VARCHAR" property="consumerCode" />
+    <result column="topic_id" jdbcType="BIGINT" property="topicId" />
+    <result column="topic_code" jdbcType="VARCHAR" property="topicCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, consumer_id, consumer_code, topic_id, topic_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_tpc_mq_subscribe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_tpc_mq_subscribe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.PcTpcMqSubscribe">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_subscribe (id, consumer_id, consumer_code, 
+      topic_id, topic_code)
+    values (#{id,jdbcType=BIGINT}, #{consumerId,jdbcType=BIGINT}, #{consumerCode,jdbcType=VARCHAR}, 
+      #{topicId,jdbcType=BIGINT}, #{topicCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcTpcMqSubscribe">
+    <!--@mbg.generated-->
+    insert into pc_tpc_mq_subscribe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="consumerId != null">
+        consumer_id,
+      </if>
+      <if test="consumerCode != null">
+        consumer_code,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+      <if test="topicCode != null">
+        topic_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="consumerId != null">
+        #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="consumerCode != null">
+        #{consumerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="topicCode != null">
+        #{topicCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcTpcMqSubscribe">
+    <!--@mbg.generated-->
+    update pc_tpc_mq_subscribe
+    <set>
+      <if test="consumerId != null">
+        consumer_id = #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="consumerCode != null">
+        consumer_code = #{consumerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="topicId != null">
+        topic_id = #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="topicCode != null">
+        topic_code = #{topicCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcTpcMqSubscribe">
+    <!--@mbg.generated-->
+    update pc_tpc_mq_subscribe
+    set consumer_id = #{consumerId,jdbcType=BIGINT},
+      consumer_code = #{consumerCode,jdbcType=VARCHAR},
+      topic_id = #{topicId,jdbcType=BIGINT},
+      topic_code = #{topicCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

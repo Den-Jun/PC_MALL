@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junbaobao.mapper.PcTpcJobTaskMapper">
+  <resultMap id="BaseResultMap" type="com.junbaobao.model.PcTpcJobTask">
+    <!--@mbg.generated-->
+    <!--@Table pc_tpc_job_task-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="ref_no" jdbcType="VARCHAR" property="refNo" />
+    <result column="task_type" jdbcType="VARCHAR" property="taskType" />
+    <result column="task_data" jdbcType="LONGVARCHAR" property="taskData" />
+    <result column="task_exe_count" jdbcType="INTEGER" property="taskExeCount" />
+    <result column="dead" jdbcType="INTEGER" property="dead" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="exe_instance_ip" jdbcType="VARCHAR" property="exeInstanceIp" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="exe_time" jdbcType="INTEGER" property="exeTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version, ref_no, task_type, task_data, task_exe_count, dead, `status`, exe_instance_ip, 
+    create_time, update_time, exe_time, yn
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pc_tpc_job_task
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pc_tpc_job_task
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.junbaobao.model.PcTpcJobTask">
+    <!--@mbg.generated-->
+    insert into pc_tpc_job_task (id, version, ref_no, 
+      task_type, task_data, task_exe_count, 
+      dead, `status`, exe_instance_ip, 
+      create_time, update_time, exe_time, 
+      yn)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=INTEGER}, #{refNo,jdbcType=VARCHAR}, 
+      #{taskType,jdbcType=VARCHAR}, #{taskData,jdbcType=LONGVARCHAR}, #{taskExeCount,jdbcType=INTEGER}, 
+      #{dead,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{exeInstanceIp,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{exeTime,jdbcType=INTEGER}, 
+      #{yn,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.junbaobao.model.PcTpcJobTask">
+    <!--@mbg.generated-->
+    insert into pc_tpc_job_task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="refNo != null">
+        ref_no,
+      </if>
+      <if test="taskType != null">
+        task_type,
+      </if>
+      <if test="taskData != null">
+        task_data,
+      </if>
+      <if test="taskExeCount != null">
+        task_exe_count,
+      </if>
+      <if test="dead != null">
+        dead,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="exeInstanceIp != null">
+        exe_instance_ip,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="exeTime != null">
+        exe_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="refNo != null">
+        #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="taskType != null">
+        #{taskType,jdbcType=VARCHAR},
+      </if>
+      <if test="taskData != null">
+        #{taskData,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="taskExeCount != null">
+        #{taskExeCount,jdbcType=INTEGER},
+      </if>
+      <if test="dead != null">
+        #{dead,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="exeInstanceIp != null">
+        #{exeInstanceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exeTime != null">
+        #{exeTime,jdbcType=INTEGER},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.junbaobao.model.PcTpcJobTask">
+    <!--@mbg.generated-->
+    update pc_tpc_job_task
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="refNo != null">
+        ref_no = #{refNo,jdbcType=VARCHAR},
+      </if>
+      <if test="taskType != null">
+        task_type = #{taskType,jdbcType=VARCHAR},
+      </if>
+      <if test="taskData != null">
+        task_data = #{taskData,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="taskExeCount != null">
+        task_exe_count = #{taskExeCount,jdbcType=INTEGER},
+      </if>
+      <if test="dead != null">
+        dead = #{dead,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="exeInstanceIp != null">
+        exe_instance_ip = #{exeInstanceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exeTime != null">
+        exe_time = #{exeTime,jdbcType=INTEGER},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.junbaobao.model.PcTpcJobTask">
+    <!--@mbg.generated-->
+    update pc_tpc_job_task
+    set version = #{version,jdbcType=INTEGER},
+      ref_no = #{refNo,jdbcType=VARCHAR},
+      task_type = #{taskType,jdbcType=VARCHAR},
+      task_data = #{taskData,jdbcType=LONGVARCHAR},
+      task_exe_count = #{taskExeCount,jdbcType=INTEGER},
+      dead = #{dead,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      exe_instance_ip = #{exeInstanceIp,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      exe_time = #{exeTime,jdbcType=INTEGER},
+      yn = #{yn,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

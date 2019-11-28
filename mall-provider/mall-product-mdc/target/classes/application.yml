@@ -1,0 +1,26 @@
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.junbaobao.model
+  mapper-locations:
+    - calsspath:mybatis/mapper/*.xml
+spring:
+  application:
+    name: mall-product-mdc
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/paascloud_mdc?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull
+    druid:
+      web-stat-filter:
+        exclusions: "*.js,*.html,*.css,*.png,*.jpg,/druid/*,*.jpg,mdc"#不统计这些请求数据
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: mall-product-mdc-8001
